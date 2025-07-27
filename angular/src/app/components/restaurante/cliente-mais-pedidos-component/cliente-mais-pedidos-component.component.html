@@ -1,0 +1,25 @@
+<section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md">
+  <h2 class="text-lg font-semibold text-gray-700">Relatório: Clientes que mais pediram</h2>
+
+  <form>
+    <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+      <!-- Loop clientes -->
+      <div class="p-4 border rounded bg-gray-50">
+        @for (cliente of relatorioCliente; track cliente.nome) {
+          <p><strong>Nome:</strong> {{ cliente.nome }}</p>
+          <p><strong>Total Pedidos:</strong> {{ cliente.qtd_pedidos }}</p>
+          <br>
+        }
+      </div>
+    </div>
+
+    <div class="flex justify-end mt-6">
+    </div>
+
+    <div class="flex justify-end">
+      <button (click)="backHome()" type="button" class="cursor-pointer px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-red-700 rounded-md hover:bg-red-500 focus:outline-none focus:bg-gray-600">Voltar</button>
+    </div>
+  </form>
+</section>
+
+<app-footer-component></app-footer-component>
